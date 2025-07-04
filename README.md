@@ -77,4 +77,5 @@ kubectl get svc prometheus-kube-prometheus-prometheus
 ```
 
 # Access Prometheus in browser
-URL format: http://<VM_IP>:<NodePort>   --  Example: http://100.91.78.70:32290
+URL format: http://<VM_IP>:<NodePort>   
+Example: http://100.91.78.70:32290
