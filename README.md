@@ -23,6 +23,8 @@ source ./k3s-env.sh
 curl -sfL https://get.k3s.io | sh -
 kubectl get nodes
 ```
+![k3s 1](https://github.com/user-attachments/assets/682ef88d-44e6-463c-9836-16cd61e79a71)
+
 
 # Configure kubectl access
 ```bash
@@ -30,6 +32,7 @@ mkdir -p ~/.kube
 sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 sudo chown $USER:$USER ~/.kube/config
 ```
+
 
 # Install Helm
 ```bash
@@ -53,6 +56,13 @@ helm install prometheus prometheus-community/kube-prometheus-stack \
   --set grafana.grafana.ini.database.wal=true
 ```
 
+![k3s namespace x depl](https://github.com/user-attachments/assets/f8dde502-9374-4135-880e-f6ec08f3cfc4)
+
+![k3s all](https://github.com/user-attachments/assets/18f41b8c-d1e6-434f-9121-e76eed7fcb27)
+
+
+
+
 # Expose Grafana using NodePort
 ```bash
 kubectl patch svc prometheus-grafana -p '{"spec": {"type": "NodePort"}}'
@@ -65,9 +75,17 @@ kubectl get svc prometheus-grafana
 # URL format: http://<VM_IP>:<NodePort>
 # Example: http://100.91.78.70:32185
 ```
+![grafana ui](https://github.com/user-attachments/assets/55af1099-250d-42d9-802b-51e21a7d4cd7)
+
+![ui 2](https://github.com/user-attachments/assets/68683c95-d478-45a4-bece-ca6fcac2d605)
+
+
 # Grafana credentials:
 * Username: admin
 * Password: prom_operator
+
+![Screenshot_4-7-2025_141559_100 91 78 70](https://github.com/user-attachments/assets/5fad6a3f-0699-4a9c-964e-d25c2cfad50e)
+
 
 # Expose Prometheus using NodePort
 ```bash
@@ -79,3 +97,7 @@ kubectl get svc prometheus-kube-prometheus-prometheus
 # Access Prometheus in browser
 URL format: http://<VM_IP>:<NodePort>   
 Example: http://100.91.78.70:32290
+
+![prom ui](https://github.com/user-attachments/assets/eff57c14-bcfb-47cb-bc56-ad75b4c33c91)
+
+![Screenshot_4-7-2025_142425_100 91 78 70](https://github.com/user-attachments/assets/096fc0c9-ba66-4ffd-a47b-b486d2aa8754)
