@@ -1,0 +1,35 @@
+grafana:
+  enabled: true
+  adminUser: "admin"
+  adminPassword: "admin"
+  persistence:
+    enabled: true
+    accessModes:
+      - ReadWriteOnce
+    size: 2Gi
+    storageClassName: standard
+  grafana.ini:
+    database:
+      wal: true
+      cache_mode: "private"
+    security:
+      allow_embedding: true
+      admin_user: admin
+      admin_password: admin
+    auth.anonymous:
+      enabled: false
+  service:
+    type: NodePort
+    port: 80
+prometheus:
+  prometheusSpec:
+    retention: "7d"
+    serviceMonitorSelectorNilUsesHelmValues: false
+    podMonitorSelectorNilUsesHelmValues: false
+  service:
+    type: NodePort
+    port: 9090
+alertmanager:
+  enabled: true
+  service:
+    type: ClusterIP
