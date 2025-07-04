@@ -66,8 +66,8 @@ kubectl get svc prometheus-grafana
 # Example: http://100.91.78.70:32185
 ```
 # Grafana credentials:
-# Username: admin
-# Password: prom_operator
+* Username: admin
+* Password: prom_operator
 
 # Expose Prometheus using NodePort
 ```bash
