@@ -56,6 +56,8 @@ helm install prometheus prometheus-community/kube-prometheus-stack \
   --set grafana.grafana.ini.database.wal=true
 ```
 
+#Alternatively you can put all the dependables into a yaml file and apply during the install
+
 ![k3s namespace x depl](https://github.com/user-attachments/assets/f8dde502-9374-4135-880e-f6ec08f3cfc4)
 
 ![k3s all](https://github.com/user-attachments/assets/18f41b8c-d1e6-434f-9121-e76eed7fcb27)
