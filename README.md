@@ -1,5 +1,7 @@
 # Helm Charts x K3s Monitoring Stack with Prometheus & Grafana
 
+*
+
 This guide sets up a lightweight Kubernetes cluster using K3s on a virtual machine, deploys a Prometheus monitoring stack via Helm, and exposes both Grafana and Prometheus dashboards using NodePort.
 ![image](https://github.com/user-attachments/assets/6d180dab-3142-40aa-92d8-7e3ade483b8b)
 
